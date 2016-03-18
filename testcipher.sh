@@ -6,8 +6,9 @@ PORT=$2
 DELAY=1
 ciphers=$(openssl ciphers 'ALL:eNULL' | sed -e 's/:/ /g')
 #end prepare
+
 #function
-function run {
+function run () {
   for cipher in ${ciphers[@]}
   do
     result=$(echo -n | openssl s_client -cipher "$cipher" -connect $SERVER:$PORT 2>&1)
@@ -24,6 +25,7 @@ function run {
   done
 }
 #end function
+
 echo $SERVER:$PORT
 
 #check parameters
@@ -33,4 +35,3 @@ if [[ -z "$1" || -z "$2" ]]; then
 else
   run
 fi
-done
