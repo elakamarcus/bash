@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#comment
 #prepare
 SERVER=$1
 PORT=$2
