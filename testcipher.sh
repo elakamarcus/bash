@@ -30,7 +30,7 @@ echo $SERVER:$PORT
 
 #check parameters
 if [[ -z "$1" || -z "$2" ]]; then
-  echo need server and port.
+  echo need server and port. E.g. $ %0 <IP> <PORT>
   exit 1
 else
   run
