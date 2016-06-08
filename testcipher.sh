@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-#prepare
 SERVER=$1
 PORT=$2
 DELAY=1
 ciphers=$(openssl ciphers 'ALL:eNULL' | sed -e 's/:/ /g')
-#end prepare
 
-#function
 function run () {
   for cipher in ${ciphers[@]}
   do
@@ -24,11 +21,9 @@ function run () {
   sleep $DELAY
   done
 }
-#end function
 
 echo $SERVER:$PORT
 
-#check parameters
 if [[ -z "$1" || -z "$2" ]]; then
   echo need server and port. E.g. $ %0 <IP> <PORT>
   exit 1
