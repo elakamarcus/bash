@@ -7,7 +7,7 @@ sleep 2
 function run () {
  for n in ${nsescripts[@]}
    do 
-     echo "nmap -sS -p $dstp $target --script=$n"
+     echo "nmap -sS -p $dstp $target --script=$n -PN"
  done
 }
 
