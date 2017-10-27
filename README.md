@@ -1,5 +1,5 @@
 # bash
-collection of script for linux bash
+bash baby!
 
 _backdoor.sh_
 - POC
