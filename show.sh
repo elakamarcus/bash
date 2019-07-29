@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# #######
 # TODO:
 #   - run python script from bash to d/l
 # fresh list of articles
+# #######
 
 # input file
 input="articles.lst"
