@@ -4,6 +4,8 @@
 # TODO:
 #   - run python script from bash to d/l
 # fresh list of articles
+#   - check whether file on parameter
+# or default input file articles.lst exist
 # #######
 
 # input file
