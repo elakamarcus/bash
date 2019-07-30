@@ -8,8 +8,28 @@
 # or default input file articles.lst exist
 # #######
 
-# input file
-input="articles.lst"
+# if no parameter provided
+if [[ -z "$1" ]]; then
+    if python3 ../python/physicsfeed01.py 2>/dev/null; then
+        # set input file, hardcoded from python script
+        if stat "articles.lst" 1>/dev/null 2>&1; then
+            input="articles.lst"
+        else
+            echo "Missing input."
+        fi
+    else
+        echo "Error fetching news feed."
+        exit 1
+    fi
+else
+    if stat "$1" 1>/dev/null 2>&1; then
+        input="$1"
+    else
+        echo "File does not exist."
+        echo "Run without parameter to fetch news feed."
+        exit 1
+    fi
+fi
 
 # set control variable
 i=0
