@@ -1,6 +1,10 @@
 # bash
 bash baby!
 
+_show.sh_
+- list articles from feed\
+![gif](https://media.giphy.com/media/gdfqyRxiEZjGM8wowj/giphy.gif)
+
 _backdoor.sh_
 
 - POC
