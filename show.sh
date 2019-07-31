@@ -2,10 +2,8 @@
 
 # #######
 # TODO:
-#   - run python script from bash to d/l
-# fresh list of articles
-#   - check whether file on parameter
-# or default input file articles.lst exist
+#   - script on parameter to fetch news
+#       - if no script as $2, then go default ../python/
 # #######
 
 # if no parameter provided
@@ -16,6 +14,7 @@ if [[ -z "$1" ]]; then
             input="articles.lst"
         else
             echo "Missing input."
+            exit 1
         fi
     else
         echo "Error fetching news feed."
@@ -26,7 +25,7 @@ else
         input="$1"
     else
         echo "File does not exist."
-        echo "Run without parameter to fetch news feed."
+        echo "Run without parameter to fetch news feed from hardcoded script path."
         exit 1
     fi
 fi
@@ -34,14 +33,14 @@ fi
 # set control variable
 i=0
 function header() {
+    clear
     echo -e "\e[1;30m\t\t---:[ News feed ]:---"
 }
-# while there are still lines
+# read lines from the file into variable 'line'
 while IFS= read -r line
 do
     # counter = 0 means it is a title
     if [[ "$i" == 0 ]]; then
-        clear
         header
         echo -e "\e[32mTitle: \e[37m$line"
         ((i++)) # increment counter
