@@ -46,10 +46,13 @@ do
         ((i++)) # increment counter
     # if counter = 1 means it is content
     elif [[ "$i" == 1 ]]; then
-        echo -e "\e[32mBrief: \e[1;30m$line"
+        echo -e "\e[32mBrief: \e[37m$line"
+        ((i++)) # increment counter
+    elif [[ "$i" == 2 ]]; then
+        echo -e "\e[32mURL: \e[1;30m$line"
         echo -e "\n\e[1;30m\t\t--- end article ---"
         # wait 5 seconds
-        sleep 3s
+        sleep 7s
         i=0
     fi
 done < "$input"
