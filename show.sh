@@ -62,5 +62,4 @@ echo -e "\e[0m\n"
 # notes:
 # sleep NUMBER[SUFFIX]
 # s, seconds; m, minutes; h, hours
-# the python script has to run to 
-#generate the filet from wherr to read articles.
+# the python script has to run to generate the file from where to read articles.
